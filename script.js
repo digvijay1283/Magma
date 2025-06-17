@@ -22,26 +22,23 @@ ScrollTrigger.scrollerProxy("#main", {
   pinType: document.querySelector("#main").style.transform ? "transform" : "fixed"
 });
 
-
-
-
-
 // each time the window updates, we should refresh ScrollTrigger and then update LocomotiveScroll. 
 ScrollTrigger.addEventListener("refresh", () => locoScroll.update());
 
 // after everything is set up, refresh() ScrollTrigger and update LocomotiveScroll because padding may have been added for pinning, etc.
 ScrollTrigger.refresh();
 }
-
 loco()
 
-var clutter="";
 
-document.querySelector("#page2>h1").textContent.split(" ").forEach(function(dets){
-   clutter+= `<span> ${dets} </span>` 
+var clutter = "";
 
-   document.querySelector("#page2>h1").innerHTML = clutter;
+document.querySelector("#page2>h1").textContent.split("").forEach(function(dets){
+    clutter += `<span>${dets}</span>`
+
+    document.querySelector("#page2>h1").innerHTML = clutter;
 })
+
 
 gsap.to("#page2>h1>span",{
     scrollTrigger:{
@@ -53,9 +50,10 @@ gsap.to("#page2>h1>span",{
     },
     stagger:.2,
     color:`#fff`
-}) 
+})
 
- 
+
+
 function canvas(){
     const canvas = document.querySelector("#page3>canvas");
 const context = canvas.getContext("2d");
@@ -206,6 +204,11 @@ ScrollTrigger.create({
 }
 canvas()
 
+
+
+
+
+
 var clutter = "";
 
 document.querySelector("#page4>h1").textContent.split("").forEach(function(dets){
@@ -225,6 +228,10 @@ gsap.to("#page4>h1>span",{
   stagger:.2,
   color:`#fff`
 })
+
+
+
+
 
 
 
@@ -378,6 +385,8 @@ end: `250% top`,
 });
 }
 canvas1()
+
+
 
 
 var clutter = "";
